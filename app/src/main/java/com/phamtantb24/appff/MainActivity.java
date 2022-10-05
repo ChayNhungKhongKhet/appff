@@ -45,6 +45,14 @@ public class MainActivity extends AppCompatActivity {
                         editor.putBoolean("Checked",true);
                         editor.commit();
                     }
+                    else {
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove("UserName");
+                        editor.remove("Password");
+                        editor.remove("Checked");
+                        editor.commit();
+
+                    }
                 }
                 else
                     Toast.makeText(MainActivity.this,"Login fail",Toast.LENGTH_SHORT).show();
